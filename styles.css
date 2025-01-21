@@ -1,0 +1,444 @@
+@font-face {
+    font-family: "Kanit";
+    src: url("assets/fonts/kanit/Kanit-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Kanit";
+    src: url("assets/fonts/kanit/Kanit-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Kanit";
+    src: url("assets/fonts/kanit/Kanit-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    /* height of fixed header */
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family: 'Kanit', sans-serif !important;
+    line-height: 1.6;
+}
+
+header {
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    /* เพิ่ม z-index */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #2c5f2d;
+}
+
+.logo-icon {
+    font-size: 2.2rem !important;
+    color: #2c5f2d;
+}
+
+.logo-text {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #2c5f2d;
+}
+
+.nav-link {
+    position: relative;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    color: #4CAF50 !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #2E7D32 !important;
+    background-color: #E8F5E9;
+}
+
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #2E7D32;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 80%;
+}
+
+.nav-link.active {
+    color: #fff !important;
+    background-color: #2E7D32 !important;
+    font-weight: 500;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(46, 125, 50, 0.2);
+}
+
+.navbar {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0.8rem 0;
+}
+
+.navbar-brand {
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+.navbar-brand .logo-icon {
+    font-size: 1.8rem;
+    color: #198754;
+}
+
+.nav-link {
+    position: relative;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    color: #4CAF50 !important;
+}
+
+
+
+
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://img.freepik.com/free-photo/indoor-plants-home-garden_53876-133116.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 1rem;
+}
+
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+
+footer {
+    background: #333;
+    color: white;
+    padding: 3rem 5% 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-column h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-column p {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin-bottom: 0.5rem;
+}
+
+.attribution {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+}
+
+.attribution a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.social-links li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.social-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #4CAF50;
+}
+
+.social-links {
+    font-size: 1.2rem;
+    color: #4CAF50;
+}
+
+
+.cookie-consent {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    padding: 1rem;
+}
+
+.cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+.cookie-content {
+    font-size: 2rem;
+    color: #2c5f2d;
+}
+
+.cookie-content p {
+    flex: 1;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.cookie-buttons button {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Prompt', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.accept-btn {
+    background: #2c5f2d;
+    color: white;
+}
+
+.accept-btn:hover {
+    background: #234b24;
+}
+
+.settings-btn {
+    background: #e8f5e9;
+    color: #2c5f2d;
+}
+
+.settings-btn:hover {
+    background: #d7ecd8;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.1rem;
+}
+
+
+.contact-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.contact-section {
+    padding: 6rem 5% 5rem;
+    scroll-margin-top: 0px;
+    background: #c8e6c9;
+    /* เข้มกว่านิดหน่อย */
+}
+
+.about-section h2,
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c5f2d;
+}
+
+.plant-section {
+    padding: 6rem 5% 5rem;
+    scroll-margin-top: 0px;
+    background: #f4fbf3;
+    /* เข้มกว่านิดหน่อย */
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-intro h3 {
+        font-size: 1.5rem;
+    }
+
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+    }
+
+    .cookie-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: white;
+        padding: 1rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin-top: 1rem;
+    }
+
+    .nav-item {
+        /* margin: 0.5rem 0; */
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .nav-link:hover {
+        background-color: #e8f5e9;
+        border-radius: 6px;
+    }
+
+    .navbar-nav {
+        gap: 0.75rem;
+    }
+
+    .nav-link {
+        border-radius: 10px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .logo img {
+        height: 32px;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .logo-icon {
+        font-size: 1.8rem !important;
+    }
+
+    .logo-text {
+        font-size: 1.4rem;
+    }
+}
