@@ -25,7 +25,7 @@ plant-website-bootstrap/
 │       ├── images/
 │       └── videos/
 ├── index.html
-└── style.css
+└── styles.css
 ```
 
 ## วิธีการติดตั้ง
