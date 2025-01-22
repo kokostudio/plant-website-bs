@@ -504,8 +504,16 @@
                 <input type="password" class="form-control" id="reg-password" required>
               </div>
             </div>
+            <div class="mb-3">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="registerAcceptPrivacy" required>
+                <label class="form-check-label" for="registerAcceptPrivacy">
+                  ฉันได้อ่านและยอมรับ <a href="privacy-policy.html" target="_blank">นโยบายความเป็นส่วนตัว</a>
+                </label>
+              </div>
+            </div>
             <div class="d-grid">
-              <button type="submit" class="btn btn-success btn-lg">สมัครสมาชิก</button>
+              <button type="submit" class="btn btn-success btn-lg" id="registerButton" disabled>สมัครสมาชิก</button>
             </div>
           </form>
         </div>
@@ -653,8 +661,13 @@
 
     function handleRegister(event) {
       event.preventDefault();
+      const acceptPrivacy = document.getElementById('registerAcceptPrivacy').checked;
+      if (!acceptPrivacy) {
+          alert('กรุณายอมรับนโยบายความเป็นส่วนตัวก่อนสมัครสมาชิก');
+          return false;
+      }
       // Add your registration logic here
-      alert('Registration form submitted');
+      alert('ลงทะเบียนสำเร็จ');
     }
 
     function handleContactForm(event) {
@@ -677,6 +690,20 @@
             } else {
                 loginButton.classList.remove('btn-success');
                 loginButton.classList.add('btn-secondary');
+            }
+        });
+
+        const registerAcceptPrivacyCheckbox = document.getElementById('registerAcceptPrivacy');
+        const registerButton = document.getElementById('registerButton');
+
+        registerAcceptPrivacyCheckbox.addEventListener('change', function() {
+            registerButton.disabled = !this.checked;
+            if(this.checked) {
+                registerButton.classList.remove('btn-secondary');
+                registerButton.classList.add('btn-success');
+            } else {
+                registerButton.classList.remove('btn-success');
+                registerButton.classList.add('btn-secondary');
             }
         });
     });

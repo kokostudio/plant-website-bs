@@ -370,6 +370,12 @@ footer {
     text-decoration: underline;
 }
 
+#registerButton:disabled,
+#loginButton:disabled {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .about-intro h3 {
