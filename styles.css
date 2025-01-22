@@ -355,6 +355,21 @@ footer {
     /* เข้มกว่านิดหน่อย */
 }
 
+/* เพิ่มสไตล์สำหรับปุ่มล็อกอิน */
+.btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.form-check-label a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.form-check-label a:hover {
+    text-decoration: underline;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .about-intro h3 {

@@ -412,9 +412,21 @@
                 <input type="password" class="form-control" id="password" required>
               </div>
             </div>
-            <div class="d-grid">
-              <button type="submit" class="btn btn-success btn-lg">เข้าสู่ระบบ</button>
+            <div class="mb-3">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="acceptPrivacy" required>
+                <label class="form-check-label" for="acceptPrivacy">
+                  ฉันได้อ่านและยอมรับ <a href="privacy-policy.html" target="_blank">นโยบายความเป็นส่วนตัว</a>
+                </label>
+              </div>
             </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-success btn-lg" id="loginButton" disabled>เข้าสู่ระบบ</button>
+            </div>
+            <!-- <div class="text-center mt-3">
+              <button type="button" class="text-decoration-none text-success border-0 bg-light px-0"
+                data-bs-target="#resetpasswordModal" data-bs-toggle="modal">ลืมรหัสผ่าน?</button>
+            </div> -->
           </form>
         </div>
       </div>
@@ -503,12 +515,12 @@
 
   <footer>
     <div class="footer-content">
-      <div class="footer-column">
+      <div class="footer-column social-links">
         <h4>เกี่ยวกับเรา</h4>
         <p>
           <i class="fa fa-leaf me-2 fa-3x text-white"></i>
           ร้านต้นไม้ของเรามุ่งมั่นที่จะนำความสดชื่นของธรรมชาติมาสู่พื้นที่ของคุณ
-        </p>
+        </p>        
       </div>
       <div class="footer-column">
         <h4>ช่องทางติดต่อ</h4>
@@ -543,10 +555,20 @@
       <div class="footer-column">
         <h4>สมัครเป็นสมาชิก</h4>
         <p>คุณสามารถสมัครเป็นสมาชิกของเราได้ โดยการกรอกแบบฟอร์มของเรา</p>
+        <p><a href="privacy-policy.html" target="_blank">นโยบายความเป็นส่วนตัว</a></p>
         <button class="btn btn-success rounded-pill py-2 px-3" data-bs-toggle="modal" data-bs-target="#registerModal">
           <i class="fa-solid fa-user-plus"></i> สมัครสมาชิก
         </button>
       </div>
+      <!-- <div class="footer-column">
+        <h4>ลิงก์ด่วน</h4>
+        <ul class="footer-links">
+          <li><a href="#home">หน้าแรก</a></li>
+          <li><a href="#about">เกี่ยวกับต้นไม้</a></li>
+          <li><a href="#contact">ติดต่อเรา</a></li>
+          <li><a href="privacy-policy.html" target="_blank">นโยบายความเป็นส่วนตัว</a></li>
+        </ul>
+      </div> -->
     </div>
     <div class="footer-bottom">
       <p>© 2025 Plant Shop. All rights reserved.</p>
@@ -558,7 +580,10 @@
   <div class="cookie-consent" id="cookieConsent">
     <div class="cookie-content p-2">
       <i class="fa-solid fa-cookie-bite"></i>
-      <p class="mt-2">เว็บไซต์นี้ใช้คุกกี้เพื่อมอบประสบการณ์การใช้งานที่ดียิ่งขึ้น</p>
+      <p class="mt-2">
+        เว็บไซต์นี้ใช้คุกกี้เพื่อมอบประสบการณ์การใช้งานที่ดียิ่งขึ้น
+        <a href="privacy-policy.html" target="_blank">อ่านเพิ่มเติม</a>
+      </p>
       <div class="cookie-buttons">
         <button class="accept-btn" onclick="acceptCookies()">ยอมรับ</button>
         <button class="settings-btn" onclick="cookieSettings()">ตั้งค่า</button>
@@ -639,6 +664,34 @@
     }
   </script>
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const acceptPrivacyCheckbox = document.getElementById('acceptPrivacy');
+        const loginButton = document.getElementById('loginButton');
+
+        acceptPrivacyCheckbox.addEventListener('change', function() {
+            loginButton.disabled = !this.checked;
+            if(this.checked) {
+                loginButton.classList.remove('btn-secondary');
+                loginButton.classList.add('btn-success');
+            } else {
+                loginButton.classList.remove('btn-success');
+                loginButton.classList.add('btn-secondary');
+            }
+        });
+    });
+
+    function handleLogin(event) {
+        event.preventDefault();
+        const acceptPrivacy = document.getElementById('acceptPrivacy').checked;
+        if (!acceptPrivacy) {
+            alert('กรุณายอมรับนโยบายความเป็นส่วนตัวก่อนเข้าสู่ระบบ');
+            return false;
+        }
+        // Add your login logic here
+        alert('Login form submitted');
+    }
+  </script>
 </body>
 
 </html>
