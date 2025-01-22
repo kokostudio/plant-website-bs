@@ -1,3 +1,4 @@
+/* ฟอนต์ Kanit */
 @font-face {
     font-family: "Kanit";
     src: url("assets/fonts/kanit/Kanit-Regular.ttf") format("truetype");
@@ -22,6 +23,7 @@
     font-display: swap;
 }
 
+/* รีเซ็ตค่าเริ่มต้น */
 * {
     margin: 0;
     padding: 0;
@@ -31,7 +33,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
-    /* height of fixed header */
+    /* ความสูงของ header ที่ fixed */
 }
 
 body,
@@ -43,6 +45,7 @@ textarea {
     line-height: 1.6;
 }
 
+/* สไตล์ header */
 header {
     background: #ffffff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -77,6 +80,7 @@ nav {
     color: #2c5f2d;
 }
 
+/* สไตล์ลิงก์ใน navbar */
 .nav-link {
     position: relative;
     font-weight: 500;
@@ -89,7 +93,6 @@ nav {
     color: #2E7D32 !important;
     background-color: #E8F5E9;
 }
-
 
 .nav-link::after {
     content: '';
@@ -116,6 +119,7 @@ nav {
     box-shadow: 0 4px 8px rgba(46, 125, 50, 0.2);
 }
 
+/* สไตล์ navbar */
 .navbar {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 0.8rem 0;
@@ -131,16 +135,7 @@ nav {
     color: #198754;
 }
 
-.nav-link {
-    position: relative;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    color: #4CAF50 !important;
-}
-
-
-
-
+/* สไตล์ hero section */
 .hero {
     min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -156,6 +151,7 @@ nav {
     padding: 0 1rem;
 }
 
+/* สไตล์การ์ด */
 .card {
     transition: transform 0.3s ease;
 }
@@ -165,7 +161,7 @@ nav {
     cursor: pointer;
 }
 
-
+/* สไตล์ footer */
 footer {
     background: #333;
     color: white;
@@ -244,7 +240,7 @@ footer {
     color: #4CAF50;
 }
 
-
+/* สไตล์ cookie consent */
 .cookie-consent {
     display: none;
     position: fixed;
@@ -312,6 +308,7 @@ footer {
     background: #d7ecd8;
 }
 
+/* สไตล์ contact info */
 .contact-info {
     display: flex;
     flex-direction: column;
@@ -325,7 +322,7 @@ footer {
     font-size: 1.1rem;
 }
 
-
+/* สไตล์ contact content */
 .contact-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -335,7 +332,7 @@ footer {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-
+/* สไตล์ contact section */
 .contact-section {
     padding: 6rem 5% 5rem;
     scroll-margin-top: 0px;
@@ -350,13 +347,13 @@ footer {
     color: #2c5f2d;
 }
 
+/* สไตล์ plant section */
 .plant-section {
     padding: 6rem 5% 5rem;
     scroll-margin-top: 0px;
     background: #f4fbf3;
     /* เข้มกว่านิดหน่อย */
 }
-
 
 /* Responsive */
 @media (max-width: 768px) {
