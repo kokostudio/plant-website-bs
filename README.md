@@ -41,10 +41,9 @@ plant-website-bootstrap/
 4.Auto Rename Tag
 5.Better Comments
 6.Highlight Matching Tag
-7.Indenticator
-8.Prettier Formatter for Visual Studio Code
-9.IntelliSense for CSS class names in HTML
-10.Material Theme Icons — Free
+7.Guides
+8.IntelliSense for CSS class names in HTML
+9.Material Theme Icons — Free
 
 
 
