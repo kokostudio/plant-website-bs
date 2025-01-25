@@ -373,12 +373,12 @@
                 <textarea class="form-control" id="contact-message" rows="4" required></textarea>
               </div>
               <div class="d-grid"></div>
-                <button type="submit" class="btn btn-success btn-lg">ส่งข้อความ</button>
-              </div>
-            </form>
+              <button type="submit" class="btn btn-success btn-lg">ส่งข้อความ</button>
           </div>
+          </form>
         </div>
       </div>
+    </div>
 
 
     </div>
@@ -528,7 +528,7 @@
         <p>
           <i class="fa fa-leaf me-2 fa-3x text-white"></i>
           ร้านต้นไม้ของเรามุ่งมั่นที่จะนำความสดชื่นของธรรมชาติมาสู่พื้นที่ของคุณ
-        </p>        
+        </p>
       </div>
       <div class="footer-column">
         <h4>ช่องทางติดต่อ</h4>
@@ -663,8 +663,8 @@
       event.preventDefault();
       const acceptPrivacy = document.getElementById('registerAcceptPrivacy').checked;
       if (!acceptPrivacy) {
-          alert('กรุณายอมรับนโยบายความเป็นส่วนตัวก่อนสมัครสมาชิก');
-          return false;
+        alert('กรุณายอมรับนโยบายความเป็นส่วนตัวก่อนสมัครสมาชิก');
+        return false;
       }
       // Add your registration logic here
       alert('ลงทะเบียนสำเร็จ');
@@ -678,45 +678,45 @@
   </script>
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const acceptPrivacyCheckbox = document.getElementById('acceptPrivacy');
-        const loginButton = document.getElementById('loginButton');
+    document.addEventListener('DOMContentLoaded', function () {
+      const acceptPrivacyCheckbox = document.getElementById('acceptPrivacy');
+      const loginButton = document.getElementById('loginButton');
 
-        acceptPrivacyCheckbox.addEventListener('change', function() {
-            loginButton.disabled = !this.checked;
-            if(this.checked) {
-                loginButton.classList.remove('btn-secondary');
-                loginButton.classList.add('btn-success');
-            } else {
-                loginButton.classList.remove('btn-success');
-                loginButton.classList.add('btn-secondary');
-            }
-        });
+      acceptPrivacyCheckbox.addEventListener('change', function () {
+        loginButton.disabled = !this.checked;
+        if (this.checked) {
+          loginButton.classList.remove('btn-secondary');
+          loginButton.classList.add('btn-success');
+        } else {
+          loginButton.classList.remove('btn-success');
+          loginButton.classList.add('btn-secondary');
+        }
+      });
 
-        const registerAcceptPrivacyCheckbox = document.getElementById('registerAcceptPrivacy');
-        const registerButton = document.getElementById('registerButton');
+      const registerAcceptPrivacyCheckbox = document.getElementById('registerAcceptPrivacy');
+      const registerButton = document.getElementById('registerButton');
 
-        registerAcceptPrivacyCheckbox.addEventListener('change', function() {
-            registerButton.disabled = !this.checked;
-            if(this.checked) {
-                registerButton.classList.remove('btn-secondary');
-                registerButton.classList.add('btn-success');
-            } else {
-                registerButton.classList.remove('btn-success');
-                registerButton.classList.add('btn-secondary');
-            }
-        });
+      registerAcceptPrivacyCheckbox.addEventListener('change', function () {
+        registerButton.disabled = !this.checked;
+        if (this.checked) {
+          registerButton.classList.remove('btn-secondary');
+          registerButton.classList.add('btn-success');
+        } else {
+          registerButton.classList.remove('btn-success');
+          registerButton.classList.add('btn-secondary');
+        }
+      });
     });
 
     function handleLogin(event) {
-        event.preventDefault();
-        const acceptPrivacy = document.getElementById('acceptPrivacy').checked;
-        if (!acceptPrivacy) {
-            alert('กรุณายอมรับนโยบายความเป็นส่วนตัวก่อนเข้าสู่ระบบ');
-            return false;
-        }
-        // Add your login logic here
-        alert('Login form submitted');
+      event.preventDefault();
+      const acceptPrivacy = document.getElementById('acceptPrivacy').checked;
+      if (!acceptPrivacy) {
+        alert('กรุณายอมรับนโยบายความเป็นส่วนตัวก่อนเข้าสู่ระบบ');
+        return false;
+      }
+      // Add your login logic here
+      alert('Login form submitted');
     }
   </script>
 </body>
